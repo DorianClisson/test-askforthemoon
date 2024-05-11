@@ -12,8 +12,8 @@ The db dump contains a single collection for username + password (hashed) storag
 It contains the Richard user + his sister accounts.
 
 Here are the credentials to use on the website:
-Richard => Username: richard & Password: $0R1ch!e33
-Sister => Username: sister & Password: weakpswd
+- Richard => Username: richard & Password: $0R1ch!e33
+- Sister => Username: sister & Password: weakpswd
 
 Note that richard user is admin and can add more users if needed via the settings menu!
 
