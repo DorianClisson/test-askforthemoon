@@ -1,0 +1,62 @@
+{
+    "root": true,
+    "env": { "browser": true },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:sort/recommended",
+        "prettier"
+    ],
+    "ignorePatterns": ["dist"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint", "react-refresh", "sort"],
+    "rules": {
+        "@typescript-eslint/ban-types": "warn", // string and not String , boolean and not Boolean
+        "@typescript-eslint/comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "always-multiline",
+                "enums": "always-multiline",
+                "generics": "ignore",
+                "tuples": "always-multiline"
+            }
+        ], // add comma everywhere
+        "@typescript-eslint/explicit-module-boundary-types": "warn", // exported functions should be typed
+        "@typescript-eslint/no-explicit-any": "warn", // warning when use of "any"
+        "@typescript-eslint/no-inferrable-types": "off", // to redefine infer types if needed
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            { "argsIgnorePattern": "^_" }
+        ], // allow unused arguments starting with _
+        "no-restricted-imports": [
+            "error",
+            {
+                "patterns": [".", "!./", "..", "!../"]
+            }
+        ], // no strict relative paths > import from "." , from ".." , from "./" , from "../"
+        "react-refresh/only-export-components": [
+            "error",
+            { "allowConstantExport": false }
+        ] // JSX files should only export component to ensure fast refresh
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        },
+        "react": {
+            "version": "detect" // automatically detect the version of React to use
+        }
+    }
+}
